@@ -1,0 +1,2284 @@
+:local all_monsters = {"worker ant","queen ant","soldier ant","ant larva","bat","butterfly","vampire bat","fire bat","raven","phoenix","centaur","centaur warrior","yaktaur","yaktaur captain","draconian","black draconian","yellow draconian","pale draconian","green draconian","purple draconian","red draconian","white draconian","grey draconian","mottled draconian","draconian caller","draconian monk","draconian zealot","draconian shifter","draconian annihilator","draconian knight","draconian scorcher","elf","deep elf soldier","deep elf fighter","deep elf knight","deep elf blademaster","deep elf master archer","deep elf mage","deep elf summoner","deep elf conjurer","deep elf priest","deep elf high priest","deep elf demonologist","deep elf annihilator","deep elf sorcerer","deep elf death mage","toadstool","fungus","ballistomycete","hyperactive ballistomycete","wandering mushroom","goblin","hobgoblin","gnoll","boggart","jackal","hound","warg","wolf","war dog","hog","hell hound","hell hog","holy swine","felid","spriggan","spriggan rider","spriggan druid","spriggan berserker","spriggan air mage","spriggan defender","the Enchantress","giant slug","agate snail","elephant slug","queen bee","killer bee","bumblebee","killer bee larva","giant firefly","giant newt","giant gecko","iguana","basilisk","komodo dragon","swamp drake","fire drake","lindwurm","death drake","merfolk","merfolk impaler","merfolk javelineer","merfolk aquamancer","mermaid","siren","necrophage","ghoul","rotting hulk","orc","orc wizard","orc priest","orc warrior","orc knight","orc warlord","orc sorcerer","orc high priest","ghost","phantom","hungry ghost","flayed ghost","player ghost","player illusion","shadow","silent spectre","spirit","player","dwarf","deep dwarf","deep dwarf scion","deep dwarf artificer","deep dwarf necromancer","deep dwarf berserker","deep dwarf death knight","unborn deep dwarf","gnome","rat","quokka","grey rat","green rat","orange rat","laboratory rat","porcupine","giant cockroach","giant mite","giant centipede","scorpion","emperor scorpion","spider","tarantella","jumping spider","wolf spider","trapdoor spider","redback","demonic crawler","crocodile","baby alligator","alligator","snapping turtle","fire crab","ugly thing","very ugly thing","fire vortex","spatial vortex","vapour","insubstantial wisp","twister","worm","brain worm","swamp worm","spiny worm","giant leech","unseen horror","small abomination","yellow wasp","vampire mosquito","red wasp","ghost moth","moth of wrath","small zombie","small skeleton","small simulacrum","wight","skeletal warrior","flying skull","flaming corpse","curse skull","curse toe","Angel","Cherub","Daeva","goliath beetle","boulder beetle","boring beetle","giant","hill giant","cyclops","ettin","fire giant","frost giant","stone giant","titan","wyvern","dragon","hydra","ice dragon","steam dragon","swamp dragon","mottled dragon","quicksilver dragon","iron dragon","storm dragon","golden dragon","shadow dragon","bone dragon","pearl dragon","earth elemental","fire elemental","water elemental","air elemental","iron elemental","giant frog","giant toad","spiny frog","blink frog","giant eyeball","eye of draining","giant orange brain","great orb of eyes","shining eye","eye of devastation","golden eye","ophan","hippogriff","manticore","minotaur","griffon","sphinx","harpy","kenku","shedu","ice beast","sky beast","ooze","jelly","slime creature","merged slime creature","pulsating lump","giant amoeba","brown ooze","azure jelly","death ooze","acid blob","kobold","big kobold","kobold demonologist","lich","ancient lich","mummy","bog mummy","guardian mummy","greater mummy","mummy priest","naga","naga mage","naga warrior","greater naga","ogre","two-headed ogre","ogre mage","plant","oklob sapling","oklob plant","bush","burning bush","efreet","rakshasa","rakshasa","small snake","snake","water moccasin","black mamba","viper","sea snake","anaconda","guardian serpent","troll","rock troll","iron troll","deep troll","grizzly bear","polar bear","black bear","vampire","vampire knight","vampire mage","wraith","shadow wraith","freezing wraith","eidolon","phantasmal warrior","spectral thing","large abomination","tentacled monstrosity","Orb Guardian","sheep","yak","death yak","catoblepas","elephant","dire elephant","hellephant","apis","large zombie","large skeleton","large simulacrum","big fish","giant goldfish","electric eel","jellyfish","shark","kraken","tentacle","tentacle segment","octopode","lava worm","lava fish","lava snake","salamander","rock worm","human","slave","hell knight","necromancer","wizard","vault guard","shapeshifter","glowing shapeshifter","Killer Klown","paladin","demonspawn","demigod","halfling","pile of gold coins","weapon mimic","armour mimic","scroll mimic","potion mimic","door mimic","portal mimic","stair mimic","shop mimic","fountain mimic","dancing weapon","eldritch tentacle","eldritch tentacle segment","imp","quasit","white imp","lemure","ufetubus","iron imp","midge","shadow imp","red devil","rotting devil","hairy devil","sixfirhy","hellwing","smoke demon","tormentor","blue devil","iron devil","neqoxec","orange demon","ynoxinul","shadow demon","chaos spawn","hell beast","hellion","sun demon","reaper","soul eater","ice devil","Lorocyproca","Fiend","Ice Fiend","Shadow Fiend","Pit Fiend","Executioner","Green Death","Blue Death","Balrug","Cacodemon","golem","clay golem","wood golem","stone golem","iron golem","crystal golem","toenail golem","electric golem","ice statue","silver statue","orange crystal statue","statue","training dummy","pillar of salt","lightning spire","gargoyle","metal gargoyle","molten gargoyle","pandemonium lord","hell lord","ball lightning","giant spore","orb of fire","orb of destruction","blessed toe","silver star","death cob","Mennas","Nessos","Chuck","the iron giant","Polyphemus","Antaeus","Tiamat","Xtahua","the Lernaean hydra","the Serpent of Hell","Duvessa","Dowan","Prince Ribbit","Ijyb","Grum","Crazy Yiuf","Agnes","the royal jelly","Dissolution","Gastronok","Sonja","Pikel","Boris","Menkaure","Khufu","Ilsuiw","Erolcha","Blork the orc","Urug","Nergalle","Saint Roka","Terpsichore","Wiglaf","Azrael","Mara","Mara","Aizul","Snorg","Purgy","Jory","Nellie","Murray","Ignacio","Grinder","Roxanne","Terence","Jessica","Sigmund","Edmund","Psyche","Donald","Joseph","Erica","Josephine","Harold","Jozef","Maud","Louise","Frances","Rupert","Kirke","Norris","Frederick","Margery","Eustachio","Maurice","Nikola","Mnoleg","Lom Lobon","Cerebov","Gloorx Vloq","Geryon","Dispater","Asmodeus","Ereshkigal","test spawner","sensed monster","friendly sensed monster","trivial sensed monster","easy sensed monster","tough sensed monster","nasty sensed monster"}
+
+:local mons_difficulties = {5, 5, 5, 5, 1, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 1, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 1, 2, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 1, 1, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 5, 5, 5, 5, 5, 5, 4, 5, 5, 6, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 1, 4, 5, 5, 5, 5, 5, 1, 4, 5, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 3, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 3, 5, 5, 5, 5, 5, 5, 5, 5, 5, 1, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 1, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5}
+
+##### 1- Starting Screen ############################################
+name = Zot Bot
+#species = Mu
+#background = Fi
+#weapon = mace
+##### 2-  File System ###############################################
+
+##### 3-  Lua Files #################################################
+lua_file = lua/stash.lua
+lua_file = lua/wield.lua
+lua_file = lua/runrest.lua
+lua_file = lua/gearset.lua
+lua_file = lua/trapwalk.lua
+#lua_file = lua/pickup.lua
+
+##### Commandments #################################################
+--:	local test = io.open(commandments, "r")
+
+##### 4-  Interface #################################################
+drop_mode = single
+
+##### 4-a       Picking up and Dropping ###############
+
+:if you.race() == "Mummy" then
+    autopickup = $?"()  
+:else
+    autopickup = $?"()!%
+:end
+
+include = autopickup_exceptions.txt
+autopickup_exceptions = <of Zot
+
+##### 4-b       Targetting ############################
+allow_self_target = yes
+##### 4-c       Passive Sightings #####################
+
+##### 4-d       Branding ##############################
+
+##### 4-e       Level Map Functions ###################
+
+##### 4-f       Viewport Options  ###################
+#view_max_width = 81
+#view_max_height = 71
+##### 4-g       Travel and Exploration #################
+travel_delay = 50
+explore_delay = 50
+explore_greedy = true
+explore_stop = greedy_visited_item_stack
+auto_exclude = oklob plant,statue,curse skull,roxanne
+runrest_ignore_poison  = 2:30
+runrest_ignore_monster = butterfly:1
+include = runrest_messages.txt
+trap_prompt = false
+trapwalk_safe_hp = dart:1,needle:1,arrow:1,bolt:1,spear:1,axe:1,blade:1,teleport:1,zot:1,alarm:1
+
+##### 4-h       Stashes ###############################
+
+##### 4-i       Command Enhancements ##################
+auto_list = true
+auto_switch = true
+easy_unequip = true
+
+##### 4-j       Messages and Display Enhancements #####
+hp_warning = 0
+show_gold_turns            = true
+clear_messages             = false
+show_more                  = false
+show_inventory_weights     = true
+list_rotten                = false
+
+#####          Colours (messages and menus) #####
+include = standard_colours.txt
+include = food_colouring.txt
+include = menu_colours.txt
+menu_colour = pickup:green:god gift
+menu_colour = inventory:white:\w \+\s
+menu_colour = inventory:white:\w \#\s
+menu_colour = notes:white:Reached XP level
+message_colour = cyan:Save game and exit
+message_colour = lightred:Lua error
+message_colour = lightred:You die
+message_colour = cyan:\|\|\|
+message_colour = mute:
+include = messages.txt
+##### 4-k       Firing Commands #######################
+
+##### 4-l       Channels ##############################
+
+##### 4-m       Inscriptions ##########################
+
+##### 4-n       Macro related Options #################
+
+##### 4-t       Tile related Options ##################
+
+include = tiles_options.txt
+
+##### 5-  Dump File #################################################
+
+##### 5-a       Items and Kill List ###################
+
+##### 5-b       Notes #################################
+ood_interesting = 8
+note_hp_percent = 5
+note_skill_levels = 1,5,10,15,27
+note_items    = rod of, acquirement, preservation, running, of Zot
+note_messages = You pass through the gate
+note_messages = cast .* Abyss
+note_messages = Your scales start
+note_messages = protects you from harm
+note_messages = You fall through a shaft
+note_monsters = orb of fire, ancient lich, Sigmund
+
+##### 6-  Miscellaneous #############################################
+
+##### 6-a       All OS ################################
+
+##### 6-b       DOS and Windows #######################
+
+##### 6-c   Unix ##################################
+
+##### 6-d   Alternative keybinding files ##########
+
+#################################################
+#################################################
+####### Zot Bot - A Stone Soup Borg  v0.1 #######
+#################################################
+#################################################
+
+####Initialize some data
+
+# some tables:
+
+#Commandment related stuff:
+:local commandments = {"Thou shalt autotravel", "Thou shalt rest", "Thou should eat permafood", "Thou shalt eat corpse", "Thou shalt not attack 24 l lvl 3", "Thou shalt not attack 15 l lvl 1", "Thou should drink agility", "Thou should drink brilliance", "Thou should drink experience", "Thou should drink gaindexterity", "Thou should drink gainintelligence", "Thou should drink gainstrength", "Thou should drink invisibility", "Thou should drink levitation", "Thou should drink might", "Thou should drink porridge", "Thou should drink resistance", "Thou should drink speed", "Thou should drink water", "Thou should read teleportation", "Thou should drink healwounds if 10", "Thou should drink healing if 10", "Thou should read fear", "Thou should read blinking", "Thou should read torment", "Thou should read summoning"}
+
+:local verbs = {"rest", "flee", "attack", "fire", "zap", "read scroll", "try scroll", "try potion", "drink potion", "wield", "pray", "chop", "drop", "wait","step towards Lair", "autotravel", "wear amulet", "wear ring"}
+
+:local Bommandments = {}
+:local ccount = 0
+
+:local current_actions = {is_fleeing = false, is_fighting = nil, is_resting = false}
+:local possible_actions = {}
+:local possible_commandments = {}
+:local dos = {}
+:local donts = {}
+
+:local last_commandment = ""
+
+#End of commandment related stuff
+
+
+
+
+
+: local priority_monsters = {"ice beast","orc warrior","'s ghost",
+: "Sigmund","Menkaure","hill giant","Pikel","war dog","orc priest",
+: "orc wizard","Prince Ribbit","blink frog","Edmund","Nessos","Maud",
+: "Grinder","Erolcha","Rupert","electric eel","Yiuf","ogre","troll",
+: "Dowan","Duvessa","Nessos","giant eyeball","fire drake","dragon",
+: "Sonja","berserk","spiny frog","Erica","Jozef","Harold","jelly","wasp"}
+: local scary_monsters = {"hydra","statue","Nessos","Nikola","Sonja"}
+: local hard_monsters = {"ice beast","orc warrior","'s ghost","Sigmund",
+: "Menkaure","hill giant","Pikel","war dog","orc priest","Edmund",
+: "Nessos","Maud","Erolcha","Rupert","goliath","electric eel","Yiuf",
+: "ogre","troll","Duvessa","fire drake","dragon","berserk",
+: "spiny frog","dire elephant","Erica","Jozef","Harold","jelly","red wasp"}
+: local hand_monsters = {"Grinder","Erolcha","Rupert"}
+: local no_flee_monsters = {"orc priest","Sigmund","electric eel",
+: "Dowan","berserk","giant eyeball","centaur","Nessos","fire drake",
+: "yaktaur","dragon","Blork","killer bee","Joseph","Erica","orc wizard"}
+: local easy_monsters = {"green rat","porcupine","quokka","megabat","fleeing"}
+: local resistance_monsters = {"fire drake","Nikola"}
+
+: local valuables = {"Zot","scroll","potion","chunk","ring","amulet","stone","dart","dagger","club","spear","javelin","large rock","throwing net"}
+: local junk = {"cursed","-5","-4","-3","-2","-1"}
+: local permafood = {"cheese", "pizza", "ration","honey","jelly","bread","apple","apricot","meat","lychee","rambutan","sultanas","grape","choko"}
+: local scroll_targets = { "tried","curse","+0" }
+
+: local potion_list = { "agility","brilliance","experience","gain dexterity","gain intelligence","gain strength","invisibility","levitation","might","porridge","resistance","speed","water"}
+: local armor_list = { "leather", "ring mail", "scale", "chain", "banded", "splint", "plate", "crystal", "steam dragon", "mottled dragon", "swamp dragon", "dragon", "ice dragon", "ice dragon", "storm dragon", "gold dragon", "pearl dragon", "buckler", "shield", "helmet", "cap", "boots", "cloak", "gloves"}
+: local used_armor = {}
+
+: local str_class = {"Fighter","Berserker","Abyssal Knight","Chaos Knight","Death Knight"}
+: local dex_class = {"Hunter","Assassin","Monk"}
+: local int_class = {"Wizard","Conjurer","Summoner","Necromancer","Fire Elementalist","Ice Elementalist","Air Elementalist","Earth Elementalist","Venom Mage"}
+: local strdex_class = {"Gladiator"}
+: local strint_class = {"Priest","Skald","Enchanter"}
+: local dexint_class = {"Healer","Transmuter","Stalker","Warper","Artificer"}
+
+
+# Weapon Groups
+: local throwables = {"stone","dart","dagger","club","spear","javelin","large rock","throwing net"}
+: local short_blades = {"knife","quick blade","short sword","sabre","dagger"}
+: local long_blades = {"falchion","long sword","scimitar","katana","sword","holy eudemon sword"}
+: local axes = {"war axe","broad axe","battleaxe","executioner's axe","hand axe"}
+: local maceflails = {"whip","hammer","mace","flail","ankus","morningstar","eveningstar","scourge","club"}
+: local polearms = {"trident","halberd","scythe","trident","trishula","glavie","bardiche"}
+: local staves = {"quaterstaff","lajatang"}
+: local blowguns = {"blowgun","needle"}
+: local slings = {"sling","stone","bullet"}
+: local bows = {"bow","longbow","arrow"}
+: local crossbows = {"crossbow","bolt"}
+: local launchers = {"crossbow","bow","sling","longbow","blowgun"}
+: local ammo = {"stone","needle","bullet","arrow"}
+
+# All wearable non-weapons
+: local equipment = { "robe","mail","armour","hide","skin","buckler","shield","helmet","cap","wizard hat","boots","cloak","gloves","barding","ring","amulet" } --general catch-all
+
+# some variables:
+: local run_bot = true
+: local init_bot = false
+: local esc = string.char(27)
+
+: local have_melee_skill = false
+: local prefer_ranged = false
+
+: local scroll_choice = {none}
+: local potion_choice = {none}
+: local wield_choice = {none}
+
+: local hold = false
+: local last_search = "none"
+: local tries = 0
+: local travel_goal = "autoexplore"
+: local move = "none"
+: local last_turn = -1
+: local esc = string.char(27)
+: local ctrl = string.char(26)
+: local spc = string.char(32)
+
+: local last_hp = 1000
+: local prev_hp = 0
+: local last_mhp = 1000
+: local last_mp = 1000
+: local prev_mp = 1000
+: local last_mmp = 1000
+
+: local last_exp = 1000
+: local last_xl = 1
+: local failed_rest = false
+
+: local branch_goal = "Temple"
+: local branch_command = "GT\r"
+
+: local forbidden_stairs = "none"
+: local random_down = false
+: local last_where = you.where()
+: local last_absdepth = you.absdepth()
+
+: local stepped_on_lair = false
+
+: local is_berserk = you.berserk()
+
+: local death_count = 0
+
+: local unreachable = false
+
+: local rests_failed = 0
+
+: local invisicount = 0
+
+: local doittoit = false
+
+: local first = true
+
+: local has_read = false
+
+: local current_monsters = {}
+: local last_monsters = {}
+
+: local enemy_is_fleeing = false
+: local should_flee = false
+: local flee_count = 0
+
+: local last_assign = {}
+
+: local original_diff = 0
+: local max_enemies = 0
+
+
+# Macro: manual control toggle
+: function s()
+:     if run_bot then 
+:         run_bot = false
+:         say('*** ZOT BOT POWERING DOWN ***') 
+:     else 
+:         run_bot = true
+:         say('*** ZOT BOT ACTIVATING ***')
+:     end
+: end
+
+
+##############################################
+# Automates the Zot Bot
+##############################################
+<
+function ready()
+   if run_bot then
+		if not init_bot then initialize_bot() end
+		learn()
+		update_stuff()
+		if not has_read then
+			for i = 1, table.getn(commandments) do
+				read_commandment(commandments[i])
+			end
+			has_read = true
+		end
+		makeitso()
+		
+		for i = 1, table.getn(Bommandments) do
+			interpret_difficulty(Bommandments[i])
+		end
+		if run_bot == true then
+			choose_move()
+			make_move()
+		end
+		choose_move()
+		make_move()
+		crawl.delay(200)  --sets bot speed outside autotravel
+		if (you.xl()+1)%3 == 0 then
+			for i = 0, table.getn(str_class) do
+				if you.class() == str_class[i] then
+					send_orders('s')
+				end
+			end
+			for i = 0, table.getn(dex_class) do
+				if you.class() == dex_class[i] then
+					send_orders('d')
+				end
+			end
+			for i = 0, table.getn(int_class) do
+				if you.class() == int_class[i] then
+					send_orders('i') 
+				end
+			end
+			
+			for i = 0, table.getn(strdex_class) do
+				if you.class() == strdex_class[i] then
+					if you.xl <= 9 then
+						send_orders('s')
+					else
+						send_orders('d')
+					end
+				end
+			end
+			for i = 0, table.getn(strint_class) do
+				if you.class() == strint_class[i] then
+					if you.xl <= 9 then
+						send_orders('s')
+					else
+						send_orders('i')
+					end
+				end
+			end
+			for i = 0, table.getn(dexint_class) do
+				if you.class() == dexint_class[i] then
+					if you.xl <= 9 then
+						send_orders('d')
+					else
+						send_orders('i')
+					end
+				end
+			end
+		end
+	end
+end
+>
+
+##############################################
+# Initializes the bot
+##############################################
+<
+function initialize_bot()
+    init_bot = true
+    if you.race() == "Ghoul" then
+        table.insert(valuables,"rotting")
+    else
+        table.insert(junk,"rotting")
+        join_tables(valuables,permafood)
+    end
+    
+    
+    if you.skill("Short Blades") > 0 then
+        join_tables(valuables,short_blades)
+        have_melee_skill = true
+    end
+    if you.skill("Long Blades") > 0 then
+        join_tables(valuables,long_blades)
+        have_melee_skill = true
+    end
+    if you.skill("Axes") > 0 then
+        join_tables(valuables,axes)
+        have_melee_skill = true
+    end
+    if you.skill("Polearms") > 0 then
+        join_tables(valuables,polearms)
+        have_melee_skill = true
+    end    
+    if you.skill("Maces & Flails") > 0 then
+        join_tables(valuables,maceflails)
+        have_melee_skill = true
+    end
+    if you.skill("Staves") > 0 then
+        join_tables(valuables,staves)
+        have_melee_skill = true
+    end
+    if you.skill("Bows") > 0 then
+        join_tables(valuables,bows)
+    end
+    if you.skill("Crossbows") > 0 then
+        join_tables(valuables,crossbows)
+    end
+    if you.skill("Slings") > 0 then
+        join_tables(valuables,slings)
+    end
+    if you.skill("Throwing") > 0 then
+        join_tables(valuables,throwables)
+        join_tables(valuables,blowguns)
+    end    
+                    --keeps starting melee weapon even if unskilled
+    if (you.skill("Unarmed Combat") < 1) and not have_melee_skill then
+	   prefer_ranged = true	   
+	   for i = 0,51 do
+            it = items.inslot(i)
+            if it and (contains_string_in(it.name(),short_blades)
+		        or contains_string_in(it.name(),long_blades)
+			   or contains_string_in(it.name(),axes)
+			   or contains_string_in(it.name(),polearms)
+			   or contains_string_in(it.name(),maceflails)
+			   or contains_string_in(it.name(),staves)) then
+                if string.find(it.name(),"short sword") then
+			     table.insert(valuables,"short sword")
+			 elseif string.find(it.name(),"mace") then
+			     table.insert(valuables,"mace")
+			 elseif string.find(it.name(),"hand axe") then
+			     table.insert(valuables,"hand axe")
+			 elseif string.find(it.name(),"trident") then
+			     table.insert(valuables,"trident")
+			 elseif string.find(it.name(),"falchion") then
+			     table.insert(valuables,"falchion")
+			 else
+			     table.insert(valuables,it.name())    
+			 end
+            end
+        end        
+    end
+    --say_table(valuables) 
+end
+>
+
+###############################################
+# Update Stuff - checks for changes
+###############################################
+: function update_stuff()
+:   update_branch_goal()
+
+:   local new_hp, new_mhp = you.hp()
+:   local new_mp, new_mmp = you.mp()
+
+:   if not (last_where == you.where()) then
+:       if random_down then
+:           random_down = false
+:           forbidden_stairs = "none"
+:       elseif move == "autotravel" and travel_goal == "prev level" 
+:              and you.absdepth() == last_absdepth-1 then
+:           random_down = true
+:           forbidden_stairs = view.feature_at(0,0)
+:       end
+:   end
+ 
+:   last_where = you.where()
+:   last_absdepth = you.absdepth()
+
+:   failed_rest = false
+
+:   if last_turn == you.turns() then  -- handle bot getting stuck
+:       if move == "rest" then
+:           failed_rest = true
+:       end
+:       tries = tries + 1
+:   else
+:       tries = 0
+:       travel_goal = "autoexplore"
+:       prev_hp = last_hp
+:       prev_mp = last_mp
+:   end
+:   last_turn = you.turns()
+:   last_hp = new_hp
+:   last_mhp = new_mhp
+:   last_mp = new_mp
+:   last_mmp = new_mmp
+:   last_xl = you.xl()
+
+:	if(first == true) then
+:		prev_hp = last_hp
+:		prev_mp = last_mp
+:		first = false
+:	end
+
+:	update_monsters()
+:	last_exp = you.exp()
+:	current_actions[1] = false
+:	current_actions[2] = false
+:	enemy_is_fleeing = false
+
+:	if(table.getn(last_assign) > 1) then
+:		for i = 1, table.getn(last_assign) do
+:			table.remove(last_assign, 1)
+:		end
+:	elseif(table.getn(last_assign) == 1) then
+:		table.remove(last_assign, 1)
+:	end
+: end
+
+##############################################
+# Choose Move - the main decision-making functions
+##############################################
+: function choose_move()
+:     if c_monsters(8) > 0 then    	  --if monsters are in sight
+:         bot_battle()
+:     else                                --else explore
+:         bot_explore()
+:     end
+: end
+
+##############################################
+# Make Move - function that actually executes the move
+##############################################
+: function make_move()  
+:	  if you.confused() == true then
+:			send_orders('s')
+:	  end
+:     if move == "rest" then
+:         if failed_rest then
+:             send_orders('s')
+:         elseif not failed_rest then
+:             send_orders('5')
+:         end
+:     elseif move == "flee" then
+:         flee()
+:     elseif move == "attack" then
+:         make_attack(get_target())
+:     elseif move == "fire" then
+:         make_ranged_attack(get_target())
+:     elseif move == "zap" then
+:         send_orders('z')
+:         send_orders('a')
+:         send_orders('\{13}')
+:     elseif move == "read scroll" then
+:         read_scroll(scroll_choice)
+:     elseif move == "try scroll" then
+:         try_scroll()
+:     elseif move == "try potion" then
+:         try_potion()
+:     elseif move == "drink potion" then
+:         drink_potion(potion_choice)
+:     elseif move == "wield" then
+:         send_orders('w' .. wield_choice)
+:     elseif move == "pray" then
+:         send_orders('p')
+:     elseif move == "chop" then
+:         send_orders('c')
+:     elseif move == "drop" then
+:         drop_junk()
+:     elseif move == "wait" then
+:         send_orders('s')
+:     elseif move == "step towards Lair" then
+:         step_towards_lair()
+:     elseif move == "autotravel" then
+:         autotravel()
+:     elseif move == "wear amulet" then
+:         wear_amulet()
+:     elseif move == "wear ring" then
+:         wear_ring()
+:     else
+:         say("bad move")
+:     end
+:     --say(move)
+: end
+
+##############################################
+# Bot Battle - Basic battle decision-making
+##############################################
+: function bot_battle()
+:	current_actions[2] = true
+:     if (should_flee == true) then   		  --flee if surrounded (often retreats to hallway)
+:         move = "flee"
+:     elseif last_hp*4 < last_mhp then    --if <25% health
+:         escape_danger()
+:     elseif last_hp*3 > last_mhp then    --if >33% health, attack
+:		  flee_count = 0
+:         bot_attack()
+:     else
+:         move = "flee"
+:     end
+: end
+
+########################################################
+# Bot Attack - Chooses best attack option
+########################################################
+<
+function bot_attack()
+	if c_monsters(1) == 0 then     --if monster isn't adjacent, try ranged
+		if have_ranged() or have_throwable() then
+			move = "fire"
+		else
+			move = "attack"
+		end
+	else
+		move = "attack"
+	end	      
+end
+>
+
+########################################################
+# Escape Danger - Attempts various means of escape if available
+########################################################
+: function escape_danger()
+:	  local i
+:	  	for i = 1, table.getn(Bommandments) do --"Thou should read healwounds"
+:		  if not you.berserk() then
+:			if (table.getn(Bommandments[i]) > 3) then
+: 		 	   if ((have_scroll("teleportation")) and (Bommandments[i][2] == "read") and (Bommandments[i][3] == "teleportation")) then 
+:  	 	  		   move = "read scroll"
+:  		   		   scroll_choice = "teleportation"
+:  			   elseif ((last_hp<10) and (have_potion("healwounds")) and (Bommandments[i][2] == "drink") and (Bommandments[i][3] == "healwounds")) then
+:  			       move = "drink potion"
+:  			       potion_choice = "heal wounds"
+:  			   elseif ((last_hp<10) and (have_potion("healing")) and (Bommandments[i][2] == "drink") and (Bommandments[i][3] == "healing")) then
+:  		 	      move = "drink potion"
+:  			       potion_choice = "healing"
+:  			   elseif ((have_scroll("fear")) and (Bommandments[i][2] == "read") and (Bommandments[i][3] == "fear")) then 
+:  			       move = "read scroll"
+:  			       scroll_choice = "fear"
+:  			   elseif ((have_scroll("blinking")) and (Bommandments[i][2] == "read") and (Bommandments[i][3] == "blinking")) then 
+:  	 		      move = "read scroll"
+:  			      scroll_choice = "blinking"
+:  			   elseif ((have_scroll("torment")) and (Bommandments[i][2] == "read") and (Bommandments[i][3] == "torment")) then 
+:  			       move = "read scroll"
+:  			       scroll_choice = "torment"
+:  		 	  elseif ((have_scroll("summoning")) and (Bommandments[i][2] == "read") and (Bommandments[i][3] == "summoning")) then 
+:  		 	      move = "read scroll"
+:  		  	     scroll_choice = "summoning"
+:  			   elseif have_unknown_potion() then
+:  			       move = "try potion"
+:  		 	  elseif have_unknown_scroll() then
+:  			       move = "try scroll"
+:  			   else
+:  			       move = "flee"
+:  			   end
+:  			 else
+:   	 	     move = "flee"
+:			  end
+: 		   end
+:		end
+:	end
+
+##############################################
+# Bot Explore - Character Maintanence and travel
+##############################################
+<
+function bot_explore()
+	if((c_monsters(8) == 0 and doittoit == true and prev_hp > last_hp and you.poisoned() == false and not string.find(view.feature_at(0,0),"trap_mechanical")) or invisicount > 1) then
+	   flee()
+	   if(invisicount == 0) then
+			invisicount = 5
+	   end
+	   doittoit = false
+	
+    elseif (last_hp < last_mhp or last_mp < last_mmp)   --rest
+      and not (you.hunger() == "hungry" 
+      or you.hunger() == "very hungry" 
+      or you.hunger() == "near starving" 
+      or you.hunger() == "starving") then      
+        move = "rest"
+		find_corpse_tries = 0
+
+    elseif (you.hunger() == "hungry"                --eat food
+      or you.hunger() == "very hungry" 
+      or you.hunger() == "near starving" 
+      or you.hunger() == "starving") 
+      and (have_chunks() or have_permafood()) then
+        eat_food()
+	elseif (you.hunger() == "hungry"                --find corpses
+	  or you.hunger() == "very hungry"
+	  or you.hunger() == "near starving"
+	  or you.hunger() == "starving")
+	  and (have_corpse()) then
+		use_corpse()
+	elseif (you.hunger() == "hungry"                --find corpses
+	  or you.hunger() == "very hungry"
+	  or you.hunger() == "near starving"
+	  or you.hunger() == "starving")
+	  and (find_corpse_tries == 0) then
+	    find_corpse()
+    elseif on_corpse()                              --eat corpse
+      and (you.hunger() == "hungry" 
+      or you.hunger() == "very hungry" 
+      or you.hunger() == "near starving" 
+      or you.hunger() == "starving") then
+        move = "chop"
+	elseif have_armor() > 0 then
+		equip_armor(have_armor())
+    elseif prefer_ranged                      --might prefer ranged weapons
+      and is_wielding_type() == "melee" then 
+        equip_launcher()
+		find_corpse_tries = 0
+    elseif have_junk() and not you.berserk() then   --drop useless items
+        move = "drop"
+		find_corpse_tries = 0
+    elseif have_scroll("identify")                  --TO DO: use ID scroll
+      and FALSE and not you.berserk() then
+        move = "read scroll"
+        scroll_choice = "identify"
+		find_corpse_tries = 0
+	elseif have_potion(potion_list) and not you.berserk() then
+	    known_potion()
+    elseif have_unknown_potion() and not you.berserk() and (you.turns() % 10) == 0 then
+        move = "try potion"
+		find_corpse_tries = 0
+    elseif have_unknown_scroll() 
+      and not you.silenced() 
+      and not you.berserk() then
+        move = "try scroll"
+		find_corpse_tries = 0
+    elseif have_amulet() and not you.berserk() then
+        move = "wear amulet"
+		find_corpse_tries = 0
+    elseif have_ring() and not you.berserk() then
+        move = "wear ring"
+		find_corpse_tries = 0
+    else
+        if tries > 0 and not you.berserk() and not unreachable then
+			find_corpse_tries = 0
+            if travel_goal == "autoexplore" then
+                travel_goal = "branch"
+                if branch_command == "none" then
+                    travel_goal = "next level"
+                end
+            elseif travel_goal == "branch" then
+                travel_goal = "next level"
+            elseif travel_goal == "next level" then
+                travel_goal = "prev level"
+            elseif travel_goal == "prev level" then
+                travel_goal = "stuck"
+            end
+            tries = 0
+        end
+		if not you.berserk() then
+           move = "autotravel"
+		elseif you.berserk() then
+		   send_orders('s')
+		elseif unreachable then
+		   move = "unreachable"
+		end
+    end
+	if not (you.branch() == "D") then
+		travel_goal = "prev level"
+	end
+	if(c_monsters(8) == 0) then
+		doittoit = true
+	end
+end
+>
+#######################################
+# Wield a launcher
+#######################################
+<
+function equip_launcher()
+    local i, l
+    local it
+    for i = 0,51 do
+        it = items.inslot(i)
+        if it and contains_string_in(it.name(),valuables)
+	         and contains_string_in(it.name(),launchers)
+		    and not contains_string_in(it.name(),ammo) then
+             wield_choice = items.index_to_letter(i)
+             move = "wield"
+        end
+    end     
+end
+>
+
+#######################################
+# Returns equipped weapon range
+#######################################
+<
+function is_wielding_type()
+    local i, l
+    local it
+    for i = 0,51 do
+        it = items.inslot(i)
+	   if it and it.equipped 
+	         and not contains_string_in(it.name(),ammo) 
+		    and not contains_string_in(it.name(),equipment)then
+			say(it.name())
+		  if contains_string_in(it.name(),launchers) then
+			 return "ranged"
+		  else
+		      return "melee"
+		  end
+	   end
+    end  
+    return   
+end
+>
+
+#######################################
+# Eat Food - Eat the most apprioprate food available
+#######################################
+: function eat_food()
+:     if have_chunks() then
+:         eat_chunks()
+:     elseif have_permafood() then
+:         eat_permafood()
+:     else
+:         say('No food available!')
+:     end
+	  autopickup = $?"()!%
+: end
+
+#######################################
+# Have Junk - Check for useless items
+#######################################
+: function have_junk()
+:     local i
+:     local it
+:     for i = 0,51 do
+:         it = items.inslot(i)
+:         if it and not it.equipped 
+:               and (not contains_string_in(it.name(),valuables) or contains_string_in(it.name(),junk))then
+:             return true
+:         end
+:     end
+:     return false
+: end
+
+#######################################
+# Drop Junk - Drops a useless item
+#######################################
+: function drop_junk()
+:     local i
+:     local it
+:     for i = 0,51 do
+:         it = items.inslot(i)
+:         if it and not it.equipped 
+:               and (not contains_string_in(it.name(),valuables) or contains_string_in(it.name(),junk))then
+:             l = items.index_to_letter(i)
+:             send_orders('d' .. l)
+:             say('Dropped: ' .. it.name())
+:             return
+:         end
+:     end
+:     return
+: end
+
+#######################################
+# Have Unknown Potion
+#######################################
+: function have_unknown_potion()
+:     local i
+:     for i = 0,51 do
+:         if items.inslot(i) and string.find(items.inslot(i).name(),"potion") 
+:               and not (string.find(items.inslot(i).name(), "potion of") 
+:               or string.find(items.inslot(i).name(), "potions of")) then
+:             return true
+:         end
+:     end
+:     return false
+: end
+
+#######################################
+# Try an Unknown Potion
+#######################################
+: function try_potion()
+:     local i
+:     local l
+:     for i = 0,51 do
+:         if items.inslot(i) and string.find(items.inslot(i).name(),"potion")
+:               and not (string.find(items.inslot(i).name(), "potion of") 
+:               or string.find(items.inslot(i).name(), "potions of")) then
+:             l = items.index_to_letter(i)
+:             send_orders('q' .. l)
+:             return
+:         end
+:     end
+: end
+
+#######################################
+# Checks if you have a specific potion
+#######################################
+: function have_potion(name)
+:     local i
+:     for i = 0,51 do
+:       it = items.inslot(i)
+:         if it and contains_string_in(it.name(),potion_list) and (string.find(items.inslot(i).name(), "potion of") 
+:               or string.find(items.inslot(i).name(), "potions of")) then
+:            return true
+:         end
+:     end
+:     return false
+: end
+
+###########################################
+# Checks if you have equal or better armor, better this time
+###########################################
+: function have_armor()
+:     local i
+:     local used
+:       for i = 1,52 do 
+:       it = items.inslot(i)
+:       if it and contains_string_in(it.name(), armor_list) and not string.find(it.name(), "cursed") and not string.find(it.name(), "scroll") and not contains_string_in(it.name(), used_armor) then
+:         table.insert(used_armor, it.name())
+:         used = it.name()
+:         say("Used is "..used)
+:         say("We finally return "..i)
+:         return i
+:       end
+:      end
+:     return 0
+: end 
+
+#######################################
+# Puts the armor right on itself
+#######################################
+: function equip_armor(i)
+:    local l = items.index_to_letter(i)
+:    send_orders('W' .. l)
+:    say("I just wore "..(items.inslot(i).name()))
+: end
+
+#######################################
+# Checks and uses positive potions
+#######################################
+: function known_potion()
+:     say("Trying potions too much!")
+:     local i
+:     local l
+:     for i = 0,51 do
+:         if items.inslot(i) and (string.find(items.inslot(i).name(), "potion of") or string.find(items.inslot(i).name(), "potions of")) then
+:             l = items.index_to_letter(i)
+:             send_orders('q'..l)
+:			return true
+:         end
+:     end
+:     return false
+: end
+
+#######################################
+# Drink a specific potion
+#######################################
+: function drink_potion(name)
+:     local i
+:     local l
+:     for i = 0,51 do
+:         if items.inslot(i) and string.find(items.inslot(i).name(), name) then
+:             l = items.index_to_letter(i)
+:             say("Drinking " .. items.inslot(i).name())
+:             send_orders('q' .. l)
+:             return
+:         end
+:     end
+: end
+
+
+#######################################
+# Have an unknown scroll?
+#######################################
+: function have_unknown_scroll()
+:     local i
+:     for i = 0,51 do
+:         if items.inslot(i) and string.find(items.inslot(i).name(),"scroll labeled") then
+:             return true
+:         end
+:     end
+:     return false
+: end
+
+#######################################
+# Try an unknown scroll
+#######################################
+: function try_scroll()
+:     local i
+:     local l
+:     local t
+:     for i = 0,51 do
+:         if items.inslot(i) and string.find(items.inslot(i).name(),"scroll labeled") then
+:             l = items.index_to_letter(i)
+:             i = 52
+:         end
+:     end
+:     for i = 0,51 do
+:         if items.inslot(i) and contains_string_in(items.inslot(i).name(),scroll_targets) then
+:             t = items.index_to_letter(i)
+:             send_orders('r' .. l .. t)
+:             send_orders(esc..'Y') --hack for Blink scrolls
+:             return
+:         end
+:     end
+: end
+
+#######################################
+# Checks if you have a specific scroll
+#######################################
+: function have_scroll(name)
+:     local i
+:     for i = 0,51 do
+:         if items.inslot(i) 
+:		   and string.find(items.inslot(i).name(), name)
+:            and not string.find(items.inslot(i).name(), "ring")
+:            and not string.find(items.inslot(i).name(), "amulet") then
+:             return true
+:         end
+:     end
+:     return false
+: end
+
+#######################################
+# Read a specific scroll
+#######################################
+: function read_scroll(name)
+:     local i
+:     local l
+:     local t
+:     for i = 0,51 do
+:         if items.inslot(i) and string.find(items.inslot(i).name(), name) then
+:             l = items.index_to_letter(i)
+:             if(name == "identity") then
+:                 for i = 0,51 do
+:                     if items.inslot(i) and not (string.find(items.inslot(i).name(), "of") 
+:                                        or string.find(items.inslot(i).name(), "cursed"))
+:                                        and not contains_string_in(it.name(),permafood) then
+:                        t = items.index_to_letter(i)
+:                        send_orders('q'..l..t)
+:                        return
+:                     end
+:                 end			   
+:             else
+:                 say("Reading " .. items.inslot(i).name())
+:                 send_orders('r' .. l)
+:                 return
+:             end
+:         end
+:     end
+: end
+
+
+
+
+#######################################
+# Travel to goal
+#######################################
+: function autotravel()
+:   if travel_goal == "autoexplore" then
+:     send_orders('o')
+:   elseif travel_goal == "branch" and not (branch_command == "none") then
+:     send_orders(branch_command)
+:   elseif travel_goal == "next level" then
+:     if random_down then
+:       head_to_random_down()
+:     else
+:       send_orders('G')
+:	   send_orders('>')
+:     end
+:   elseif travel_goal == "prev level" then
+:     send_orders('G<')
+:   elseif travel_goal == "stuck" or travel_goal == unreachable then
+:     make_random_move()
+:   else
+:     say("bad travel_goal")
+:   end
+: end
+
+: function head_to_random_down()
+:   local i,j
+:   local c = "X"
+:   local feat = view.feature_at(0,0)
+:   if string.find(feat,"stone_stairs_down") then 
+:     if feat == forbidden_stairs then
+:       send_orders("X>\r")
+:     else
+:       send_orders('>')
+:     end
+:   else
+:     j = crawl.roll_dice(1,12)
+:     for i = 1,j do
+:       c = (c .. ">")
+:     end
+:     send_orders(c .. "\r")
+:   end
+: end
+
+: function check_for_traps()
+: local feat
+: local x, y
+: feat = view.feature_at(0,0)
+: if(string.find(feat,"trap_mechanical")) then
+: send_orders("h")
+: disarm()
+: end
+:end
+
+: function disarm()
+: local x, y
+
+: local feat
+: for x = -3, 3 do
+:	for y = -3, 3 do
+:		feat = view.feature_at(x, y)
+:		if(string.find(feat,"trap_mechanical")) then
+:			while(string.find(feat,"trap_mechanical")) do
+:				feat = view.feature_at(x, y)
+:				send_orders(ctrl .. "l")
+:				run_bot = false
+:			end
+:		end
+:	end
+:end
+:end
+
+
+
+
+: function next_branch_goal()
+:   if branch_goal == "Temple" then
+:     branch_goal = "Lair:1"
+:     branch_command = "GL\r"
+:   elseif branch_goal == "Lair:1" then
+:     branch_goal = "Lair:7"
+:     branch_command = "none"
+:   elseif branch_goal == "Lair:7" then
+:     branch_goal = "back to D for Orc"
+:     branch_command = "GD\r"
+:   elseif branch_goal == "back to D for Orc" then
+:     branch_goal = "Orc:1"
+:     branch_command = "GO\r"
+:   elseif branch_goal == "Orc:1" then
+:     branch_goal = "Orc:3"
+:     branch_command = "none"
+:   elseif branch_goal == "Orc:3" then
+:     branch_goal = "back to D for Vaults"
+:     branch_command = "GD\r"
+:   elseif branch_goal == "back to D for Vaults" then
+:     branch_goal = "Vault:1"
+:     branch_command = "GV\r"
+:   elseif branch_goal == "Vault:1" then
+:     branch_goal = "Vault:2"
+:     branch_command = "none"
+:   elseif branch_goal == "Vault:2" then
+:     branch_goal = "Snake:1"
+:     branch_command = "GP\r"
+:   elseif branch_goal == "Snake:1" then
+:     branch_goal = "Snake:5"
+:     branch_command = "none"
+:   elseif branch_goal == "Snake:5" then
+:     branch_goal = "back to D for D:27"
+:     branch_command = "GD\r"
+:   elseif branch_goal == "back to D for D:27" then
+:     branch_goal = "???"
+:     branch_command = "none"
+:   else
+:     branch_goal = "error"
+:     branch_command = "none"
+:   end
+: end
+
+: function update_branch_goal()
+:     local old_branch_goal = branch_goal
+:     if you.where() == branch_goal then
+:         next_branch_goal()
+:     elseif you.branch() == "D" and string.find(branch_goal, "back to D for") then
+:         next_branch_goal()
+:     elseif branch_goal == "Lair:1" and you.branch() == "D" and you.absdepth() > 13 then
+:         branch_goal = "Orc:1"
+:         branch_command = "GO\r"
+:         say("Couldn't find Lair!")
+:     elseif branch_goal == "Orc:1" and you.branch() == "D" and you.absdepth() > 14 then
+:         branch_goal = "Vault:1"
+:         branch_command = "GV\r"
+:         say("Couldn't find Orc!")
+:     elseif branch_goal == "Vault:1" and you.branch() == "D" and you.absdepth() > 19 then
+:         branch_goal = "???"
+:         branch_command = "none"
+:         say("Couldn't find Vault!")
+:     end
+:     if not (branch_goal == old_branch_goal) then
+:         branch_goal_found = false
+:         say("Next: " .. branch_goal)
+:     end
+: end
+
+########################################
+# now we are on to miscellaneous functions, 
+# only a few of which are complicated
+
+: function move_towards(dx, dy)
+:   local move = nil
+:   if adjacent(dx, dy) then
+:     move = delta_to_vi(dx, dy)
+:   else
+:     move = try_move(sign(dx), sign(dy))
+:     if abs(dx) > abs(dy) then
+:       if move == nil then move = try_move(sign(dx),0) end
+:       if move == nil then move = try_move(0,sign(dy)) end
+:     else
+:       if move == nil then move = try_move(0,sign(dy)) end
+:       if move == nil then move = try_move(sign(dx),0) end
+:     end
+:   end
+:   return move
+: end
+
+############################################
+# Attempts a melee attack
+############################################
+: function make_attack(x, y)
+:     local move = move_towards(x, y)
+:     if move == nil then
+:         make_random_move()
+:     else
+:		send_orders(move)
+:     end
+: end
+
+############################################
+# Make a ranged attack
+############################################
+: function make_ranged_attack(x, y)
+:     send_orders('ff')
+: end
+
+: function get_target()
+:	local same = true
+:	if(table.getn(current_monsters) > 1) then
+:		for i = 1, table.getn(current_monsters) do
+:			if not(get_monster_difficulty(current_monsters[i][1])) then
+:				same = false
+:			end
+:		end
+:	end
+
+:   local r = monster_distance()
+:   if r == 10 then
+:     return 0, 0
+:   end
+:   local x, y
+:     for x = -r,r do
+:       for y = -r,r do
+:         m = monster.get_monster_at(x, y)
+:         if m and contains_string_in(m:desc(),priority_monsters)
+:           and not m:is_safe() and you.see_cell_no_trans(x,y) and not ((get_monster_difficulty(m:desc()) == 1) and (c_monsters(8) > 1) and (same == false)) then
+:           return x, y
+:         end
+:       end
+:     end
+:     for x = -r,r do
+:       for y = -r,r do
+:         m = monster.get_monster_at(x, y)
+:         if m and not m:is_safe() and you.see_cell_no_trans(x,y) and not ((get_monster_difficulty(m:desc()) == 1) and (c_monsters(8) > 1) and (same == false)) then
+:           return x, y
+:         end
+:       end
+:     end
+:   return 0, 0
+: end
+
+
+:  function flee()
+:	 if(invisicount > 0) then
+:		invisicount = invisicount-1
+:    end
+:    local x,y,p,q
+:    local aa
+:    local choice_length
+:    local i,j
+:    local best_move = nil
+:    local best_score = -1
+:    local best_adjacent = 1000
+:    local score
+:    local move_choices = {none}
+:    local move_choice = {none}
+:    local choice_x = {none}
+:    local choice_y = {none}
+:    local closex
+:    local closey
+:    local num_adjacent
+:    local m
+:    local tclosest
+:    local closest = 64
+:    for a = -8, 8 do
+:      for b = -8, 8 do
+:       table.insert(choice_x, a)
+:       table.insert(choice_y, b)
+:       if can_move(a,b) then
+:        table.insert(move_choices, "true")
+:       elseif not can_move(a,b) then
+:        table.insert(move_choices, "false")
+:       end
+:      end
+:    end
+:    choice_length = table.getn(move_choices)
+:    for aa = 2, (choice_length-1) do
+:      if string.find(view.feature_at(choice_x[aa],choice_y[aa]), "stone_staircase_up") then
+:         send_orders(move_towards(choice_x[aa],choice_y[aa])..'<')
+:      elseif (string.find(move_choices[aa-1], "false") and string.find(move_choices[aa], "true") and string.find(move_choices[aa+1], "false") and (string.find(view.feature_at(choice_x[aa-1],choice_y[aa-1]),"wall") and string.find(view.feature_at(choice_x[aa+1],choice_y[aa+1]),"wall"))) or (aa>16 and string.find(move_choices[aa-16], "false") and string.find(move_choices[aa], "true") and string.find(move_choices[aa+16], "false") and (string.find(view.feature_at(choice_x[aa-16],choice_y[aa-16]),"wall") and string.find(view.feature_at(choice_x[aa+16],choice_y[aa+16]),"wall"))) then
+:        tclosest = math.sqrt((choice_x[aa]*choice_x[aa]) + (choice_y[aa]*choice_y[aa]))
+:        if tclosest < closest then
+:          closest = tclosest
+:          closex = choice_x[aa]
+:          closey = choice_y[aa]
+:        end
+:      else 
+:        make_random_move() 
+:      end
+:    end
+:    send_orders(move_towards(closex, closey))
+
+:	current_actions[1] = true
+:	if flee_count == 0 then
+:		if not (next(current_monsters) == nil) then
+:			for i = 1, table.getn(current_monsters) do
+:				local desc = current_monsters[i][1]
+:						if not (get_monster_difficulty(current_monsters[i][1]) == 9)then
+:							assignify(desc, 1)
+:						end
+:			end
+:		end
+:	end
+:	if flee_count == 0 then
+:		if not (next(current_monsters) == nil) then
+:			local diff = get_monster_difficulty(current_monsters[1][1])
+:			for i = 1, table.getn(current_monsters) do
+:				if get_monster_difficulty(current_monsters[i][1]) > diff then
+:					diff = get_monster_difficulty(current_monsters[i][1])
+:					desc = current_monsters[i][1]
+:				end
+:			end
+:			if(flee_count == 0) then
+:				flee_count = flee_count + 1
+:			end
+:		end
+:	end
+:			
+:
+:	should_flee = false
+:end
+
+# these functions need to be written
+: function is_reasonable_attack()
+:   return true
+: end
+
+: function is_good_retreat()
+:   return (c_spec_monsters(5, no_flee_monsters) == 0)
+: end
+
+########################################
+# simple functions
+
+: function monster_distance()
+:  local r, x, y
+:   for r = 1,8 do
+:     for x = -r,r do
+:       for y = -r,r do
+:         m = monster.get_monster_at(x, y)
+:         if m and not m:is_safe() then
+:           return r
+:         end
+:       end
+:     end
+:   end
+:   return 10
+: end
+
+######################################
+# Counts unsafe monsters in given radius
+# ignoring those behind glass
+######################################
+: function c_monsters(r)
+:     local x, y
+:     local i = 0
+:     for x = -r,r do
+:         for y = -r,r do
+:		    if you.see_cell_no_trans(x,y) then
+:                 unreachable = true
+:                 m = monster.get_monster_at(x, y)
+:                 if (m and not m:is_safe()) then
+:                     i = i+1
+:                 end
+:           else
+:                 unreachable = false
+:             end
+:         end
+:     end
+:     return i
+: end
+
+: function c_spec_monsters(r,t)
+:   local x, y
+:   local i = 0
+:     for x = -r,r do
+:       for y = -r,r do
+:         m = monster.get_monster_at(x, y)
+:         if m and not m:is_safe() 
+:           and contains_string_in(m:desc(), t) then
+:           i = i+1
+:         end
+:       end
+:     end
+:   return i
+: end
+
+: function c_ignore_spec_monsters(r,t)
+:   local x, y
+:   local i = 0
+:     for x = -r,r do
+:       for y = -r,r do
+:         m = monster.get_monster_at(x, y)
+:         if m and not m:is_safe() 
+:           and not contains_string_in(m:desc(), t) then
+:           i = i+1
+:         end
+:       end
+:     end
+:   return i
+: end
+
+: function can_move(x,y)
+:   return travel.feature_traversable(view.feature_at(x, y))
+: end
+: 
+: function try_move(dx, dy)
+:   if can_move(dx,dy) then
+:     return delta_to_vi(dx, dy)
+:   else
+:     return nil
+:   end
+: end
+
+: function make_random_move()
+:   local x = crawl.random2(3)-1
+:   local y = crawl.random2(3)-1
+:   if can_move(x,y) then
+:     send_orders(delta_to_vi(x, y))
+:   elseif x == 0 and y == 0 then
+:     send_orders('s')
+:   else
+:     make_random_move()
+:   end
+: end
+
+########################################
+# Checks if launcher is ready to fire
+########################################
+<
+function have_ranged()
+	local i
+	local l,a = false
+	for i = 0,51 do
+		it = items.inslot(i)
+		if it and it.equipped    --has launcher 
+		      and contains_string_in(it.name(),launchers) then
+			l = true
+		end
+		if it and it.equipped    --has ammo
+		     and contains_string_in(it.name(),launchers) then
+			a = true
+		end
+	end
+	if a and l then
+		return true
+	else
+		return false
+	end
+end
+>
+
+########################################
+# Checks for throwable weapons
+########################################
+: function have_throwable()
+:     local i
+:     for i = 0,51 do
+:         it = items.inslot(i)
+:         if it and contains_string_in(it.name(),throwables) and not it.equipped then
+:             return true
+:         end
+:     end
+:	return false
+: end
+
+: function reset_autopickup()
+    autopickup = $?"()!%
+: end
+
+: function have_corpse()
+:   local i
+:   local l
+:     for i = 0,51 do
+:       if items.inslot(i) and string.find(items.inslot(i).name(),"corpse") then
+:         return true
+:       end
+:     end
+:     return false
+:   end
+
+: function find_corpse()
+    autopickup = %X
+:   find_corpse_tries = find_corpse_tries + 1
+:   send_orders('o')
+: end
+
+: function use_corpse()
+:	local i
+:   local l
+:     for i = 0,51 do
+:         if items.inslot(i) and string.find(items.inslot(i).name(),"corpse") then
+:             l = items.index_to_letter(i)
+:             send_orders('d'..l)
+:             send_orders('c'..'y')
+			  autopickup = $?"()!%
+:			  say("drop and chop")
+:         end
+:     end
+: end
+
+: function on_corpse()
+:   local fl = you.floor_items()
+:   for it in iter.invent_iterator:new(fl) do
+:     if string.find(it.name(),"corpse") 
+:         and not string.find(it.name(),"rotting") then
+:       return true
+:     end
+:   end
+:   return false
+: end
+
+: function on_dangerous_corpse()
+:   local fl = you.floor_items()
+:   for it in iter.invent_iterator:new(fl) do
+:     if string.find(it.name(),"corpse") then
+:       return food.dangerous(it)
+:     end
+:   end
+:   return false
+: end
+
+: function have_chunks()
+:     local i
+:     local it
+:     for i = 0,51 do
+:         it = items.inslot(i)
+:         if it and string.find(it.name(),"chunk") and not food.dangerous(it) 
+:               and not food.rotting(it) then
+:             return true
+:         end
+:     end
+:     return false
+: end
+
+: function eat_chunks()
+:     local i
+:     local it
+:     local l
+:     for i = 0,51 do
+:         it = items.inslot(i)
+:         if it and string.find(it.name(),"chunk") and not food.dangerous(it) 
+:               and not food.rotting(it) then
+:             send_orders('e'..'y')
+:             return
+:         end
+:     end
+: end
+
+: function have_permafood()
+:     local i
+:     local it
+:     for i = 0,51 do
+:         it = items.inslot(i)
+:         if it and contains_string_in(it.name(),permafood) then
+:             return true
+:         end
+:     end
+:     return false
+: end
+
+: function eat_permafood()
+: local i
+: local it
+: local l
+: for i = 0,51 do
+:   it = items.inslot(i)
+:   if it and contains_string_in(it.name(),permafood) then
+:     l = items.index_to_letter(i)
+:     send_orders('e' .. l)
+:     return
+:   end
+: end
+: end
+
+
+: function have_amulet()
+: if items.equipped_at(9) then
+:   return false
+: end
+: local i
+: for i = 0,51 do
+:   if items.inslot(i) and string.find(items.inslot(i).name(),"amulet") then
+:     return true
+:   end
+: end
+: return false
+: end
+
+: function wear_amulet()
+: local i
+: local l
+: for i = 0,51 do
+:   if items.inslot(i) and string.find(items.inslot(i).name(),"amulet") then
+:     l = items.index_to_letter(i)
+:     say("WEARING AMULET")
+:     send_orders('P' .. l)
+:     return
+:   end
+: end
+: end
+
+# we assume that if just one ring is on, it is the left one
+: function have_ring()
+:   local one_ring
+:   if items.equipped_at("Left Ring") then
+:     if items.equipped_at("Right Ring") then
+:       return false
+:     else
+:       one_ring = true
+:     end
+:   else
+:     one_ring = false
+:   end
+:   local i
+:   for i = 0,51 do
+:     if items.inslot(i) and string.find(items.inslot(i).name(),"ring") 
+:         and not (one_ring and items.inslot(i).name() == 
+:         items.equipped_at("Left Ring").name()) then
+:       return true
+:     end
+:   end
+:   return false
+: end
+
+: function wear_ring()
+:   local i
+:   local l
+:   for i = 0,51 do
+:     if items.inslot(i) and string.find(items.inslot(i).name(),"ring") 
+:         and not (items.equipped_at("Left Ring") 
+:         and items.inslot(i).name() == 
+:         items.equipped_at("Left Ring").name()) then
+:       l = items.index_to_letter(i)
+:       say("WEARING RING")
+:       send_orders('P' .. l)
+:       return
+:     end
+:   end
+: end
+
+: function should_restore()
+:   if not have_potion("restore abilities") then
+:     return false
+:   end
+:   local str, mstr = you.strength()
+:   local int, mint = you.intelligence()
+:   local dex, mdex = you.dexterity()
+:   return (str+1 < mstr or int+4 < mint or int*2 <= mint or dex+1 < mdex)
+: end
+
+: function need_restore()
+:   if not have_potion("restore abilities") then
+:     return false
+:   end
+:   local str, mstr = you.strength()
+:   local int, mint = you.intelligence()
+:   local dex, mdex = you.dexterity()
+:   return (str <= 0 or int <= 0 or dex <= 0)
+: end
+
+: function wearing_stasis()
+:   return (items.equipped_at(9) and 
+:      string.find(items.equipped_at(9).name(),"stasis"))
+: end
+
+: function can_see_lair()
+:   local x, y
+:   if stepped_on_lair then
+:     return false
+:   end
+:   for x = -8,8 do
+:     for y = -8,8 do
+:       if view.feature_at(x,y) == "enter_lair"
+:           and you.see_cell_no_trans(x,y) then
+:         if x == 0 and y == 0 then
+:           stepped_on_lair = true
+:           return false
+:         else
+:           return true
+:         end
+:       end
+:     end
+:   end
+:   return false
+: end
+
+: function step_towards_lair()
+:   local x, y
+:   for x = -8,8 do
+:     for y = -8,8 do
+:       if view.feature_at(x,y) == "enter_lair" then
+:         make_attack(x,y)
+:         return
+:       end
+:     end
+:   end
+: end
+
+: function print_monsters(r)
+:   local x, y
+:     for x = -r,r do
+:       for y = -r,r do
+:         m = monster.get_monster_at(x, y)
+:         if m then
+:           say(m:desc())
+:           if m:is_safe() then
+:             say("=IS_SAFE ")
+:           end
+:           if not you.see_cell_no_trans(x,y) then
+:             say("=BEHIND_GLASS")
+:           end
+:         end
+:       end
+:     end
+: end
+
+: function update_monsters()
+:
+:	if not (next(last_monsters) == nil) then
+:		for i = 1, table.getn(last_monsters) do
+:			table.remove(last_monsters, 1)
+:		end
+:	end
+:
+:	if not (next(current_monsters) == nil) then
+:		for i = 1, table.getn(current_monsters) do
+:			table.insert(last_monsters, current_monsters[i])
+:		end
+:	end
+:
+:	if not (next(current_monsters) == nil) then
+:		for i = 1, table.getn(current_monsters) do
+:			table.remove(current_monsters, 1)
+:		end
+:	end
+:
+:local p = {0,0}
+:local x, y
+:	for x = -8,8 do
+:		for y = -8,8 do
+:			m = monster.get_monster_at(x, y)
+:			if (m and not m:is_safe()) then
+:				p = {x, y}
+:				table.insert(current_monsters, {m:desc(), p})
+:			end
+:		end
+:	end
+:
+:	if(table.getn(last_monsters) > table.getn(current_monsters)) then
+:		local spoop = false
+:		local count1 = 0
+:		local count2 = 0
+:		for i = 1, table.getn(last_monsters) do
+:			for j = 1, table.getn(current_monsters) do
+:				if(last_monsters[i][1] == current_monsters[j][1]) then
+:					local d = last_monsters[i][1]
+:					for k = 1, table.getn(last_monsters) do
+:						if(last_monsters[k][1] == d) then
+:							count1 = count1 + 1
+:						end
+:					end
+:					for l = 1, table.getn(current_monsters) do
+:						if(current_monsters[k][1] == d) then
+:							count2 = count2 + 1
+:						end
+:					end
+:					if not (count1 == count2) then
+:						if not (get_monster_difficulty(d) == 1) then
+:							assignify(d, -1)
+:						end
+:						return
+:					end
+:					spoop = true
+:				end
+:			end
+:			if(spoop == false) and (you.exp() > last_exp) then
+:				if not (get_monster_difficulty(last_monsters[i][1]) == 1) then
+:					assignify(last_monsters[i][1], -1)
+:				end
+:				return
+:			end
+:			spoop = false
+:		end
+:	end
+:end		
+
+
+
+
+: function print_behind_glass(r)
+:  local x, y
+:     for x = -r,r do
+:       for y = -r,r do
+:         if you.see_cell(x,y) and not you.see_cell_no_trans(x,y) then
+:           say(x .. "," .. y)
+:         end
+:       end
+:     end
+: end
+
+########################################
+# abstract functions
+: function say_table(t)
+:     for _, value in ipairs(t) do
+:         crawl.mpr(value)
+:     end
+:     return
+: end
+
+: function join_tables(t1, t2)
+:    local k, v
+:    for k,v in ipairs(t2) do table.insert(t1, v) end return t1
+: end
+
+: function say(x)
+:   crawl.mpr(you.turns() .. " ||| " .. x)
+:   crawl.take_note(x)
+: end
+
+: function note(x)
+:   crawl.take_note(x)
+: end
+
+: function contains_string_in(name,t)
+:     for _, value in ipairs(t) do
+:         if string.find(name, value) then
+:             return true
+:         end
+:     end
+:     return false
+: end
+
+: function delta_to_vi(dx, dy)
+:   local d2v = {
+:     [-1] = { [-1] = 'y', [0] = 'h', [1] = 'b'},
+:     [0]  = { [-1] = 'k', [0] = 's', [1] = 'j'},
+:     [1]  = { [-1] = 'u', [0] = 'l', [1] = 'n'},
+:   }
+:   return d2v[dx][dy]
+: end
+: 
+: function sign(a)
+:   return a > 0 and 1 or a < 0 and -1 or 0
+: end
+: 
+: function abs(a)
+:   return a * sign(a)
+: end
+: 
+: function adjacent(dx, dy)
+:   return abs(dx) <= 1 and abs(dy) <= 1
+: end
+
+: function send_orders(command)
+:     crawl.flush_input()
+:     crawl.sendkeys(command)
+:     crawl.flush_input()    
+: end
+
+
+#####################################################
+# Reading and Writing Commandments and Related things
+#####################################################
+
+
+
+--initiate reading a commandment
+:function read_commandment(g)
+:	g = string.sub(g, 6)
+:	q = {}
+:	local prio
+:	local verb
+:	local object
+:	local conditional
+:	local ctype
+:	local condition
+:	local x
+:	prio, verb, g = prio_verb(g)
+:	table.insert(q, prio)
+:	table.insert(q, verb)	
+:	if not (g == nil) then
+:		for i = 1, string.len(g) do
+:			x = string.find(g, " ")
+:			if x == nil then
+:				table.insert(q, g)
+:				break
+:			end
+:			temp = string.sub(g, 0, x-1)
+:			table.insert(q, temp)
+:			g = string.sub(g, x+1)
+:		end
+:	end
+	
+:	ccount = ccount + 1
+:	Bommandments[ccount] = q
+
+:end
+
+
+
+--grab the values for prio and verb, and take them out of the string
+:function prio_verb(g)
+:	local prio
+:	local prionum = 0
+:	local verb
+:	local x
+:	x = string.find(g, " ")
+:   prio = string.sub(g, 0, x-1)
+:	if prio == "shalt" then
+:		prionum = 3
+:	elseif prio == "should" then
+:		prionum = 2
+:	elseif prio == "might" then
+:		prionum = 1
+:	elseif prio == "could" then
+:		prionum = 0
+:	end
+:	g = string.sub(g, x+1)
+:	x = string.find(g, " ")
+:   if not (x == nil) and string.sub(g, 0, x-1) == "not" then
+:		prionum = prionum *-1
+:		g = string.sub(g, x+1)
+:	end
+:	x = string.find(g, " ")
+:	if not (x == nil) then
+:		verb = string.sub(g, 0, x-1)
+:	else
+:		verb = g
+:	end
+:	if not (verb == nil) and (string.len(g) > string.len(verb)) then
+:		g = string.sub(g, x+1)
+:		return prionum, verb, g
+:	else
+:		return prionum, verb, nil
+:	end
+:end
+
+
+
+:function write_commandments(cmd)
+:	local prioword
+:	local commandment
+:	if cmd[1] == 3 then
+:		prioword = "shalt"
+:	elseif cmd[1] == 2 then
+:		prioword = "should"
+:	elseif cmd[1] == 1 then
+:		prioword = "might"
+:	elseif cmd[1] == 0 then
+:		prioword = "could"
+:	elseif cmd[1] == -1 then
+:		prioword = "might not"
+:	elseif cmd[1] == -2 then
+:		prioword = "should not"
+:	elseif cmd[1] == -3 then
+:		prioword = "shalt not"  
+:	end
+
+:	commandment = ("Thou "..prioword)
+:	
+:	for i = 2, table.getn(cmd) do
+:		commandment = (commandment.." "..cmd[i])
+:	end
+
+
+:	local qq
+
+:	local samesies = false
+:	for i = 1, table.getn(Bommandments) do
+:		if(table.getn(Bommandments[i]) > 3) then
+:			if(Bommandments[i][2] == "attack") and (cmd[2] == "attack") then
+:				if not (tonumber(Bommandments[i][3]) == 0) and not (tonumber(cmd[3]) == 0) and (tonumber(Bommandments[i][3]) <= cmd[3]) and (tonumber(Bommandments[i][6]) >= cmd[6]) then
+:					qq = Bommandments[i]
+:					samesies = true
+:				end
+:			end
+:		end
+:	end
+:	if not (commandment == last_commandment) and not samesies == true then
+:		say(commandment)
+:		if(run_bot == true) then
+:			--s()
+:		end
+:	elseif(samesies == true) then
+:		say_table(qq)
+:		say("should have greater priority")
+:	end
+:	last_commandment = commandment
+:end
+
+
+
+:function write_flee()
+:	local last_hit = last_hp-you.hp()
+:	local difficulty = 0
+:	difficulty = get_group_difficulty()
+:	if(current_actions[1] == true) then
+:	end
+:	if current_actions[1] == true then
+:		if c_monsters(8)>1 then
+:			if(flee_count == 1) then
+:				write_commandments({-3, "attack", (difficulty), "l", "lvl", you.xl()})
+:				flee_count = flee_count + 1
+:			end
+:		else
+:			for x = -8, 8 do
+:				for y = -8, 8 do
+:					local m = monster.get_monster_at(x, y)
+:					if(m) then
+:						if(flee_count == 1) then
+:							local g = m:desc()
+:							write_commandments({-3, "attack", 0, "l", "lvl", you.xl()})
+:							flee_count = flee_count + 1
+:						end
+:					end
+:				end
+:			end
+:		end
+:	end
+:end
+
+
+:function get_group_difficulty()
+:	local difficulty = 0
+:	if not (next(current_monsters) == nil) then
+:		for i = 1, table.getn(current_monsters) do
+:			local desc = current_monsters[i][1]
+:			for j = 1, table.getn(all_monsters) do
+:				if string.find(desc, all_monsters[j]) then
+:					difficulty  = difficulty + mons_difficulties[j]
+:					break
+:				end
+:			end
+:		end
+:	end
+:	return difficulty
+:end
+
+
+:function get_monster_difficulty(desc)
+:	for i = 1, table.getn(all_monsters) do
+:		if string.find(desc, all_monsters[i]) then
+:			return mons_difficulties[i]
+:		end
+:	end
+:end
+
+
+:function assignify(m, d)
+:	local samesies = false
+
+:	for i = 1, table.getn(last_assign) do
+:		if (last_assign[i] == m) then
+:			samesies = true
+:		end
+:	end
+:
+:	if samesies == false or table.getn(last_assign) == 0 then
+:			say(m)
+:			say(" should have ")
+:			say(d)
+:			say(" added to it")
+:	end
+:
+:	table.insert(last_assign, m)
+:	if(run_bot == true) then
+:		--s()
+:	end
+:end
+
+
+:function interpret_difficulty(c)
+:	if(c[2] == "attack") then
+:		if(c[1] == -3) then
+:			if(c[4] == "l") then
+:				if(get_group_difficulty() >= tonumber(c[3])) and (you.xl() <= tonumber(c[6])) then
+:					should_flee = true
+:				end
+:			end
+:		end
+:	end
+:end
+
+
+:function makeitso()
+:   say("swooce")
+:   
+:   local f = dofile("test.lua")
+:   --say("got em")
+:   --f()
+:   --say("got em")
+:   say(testeroni())
+:   say("got em")
+:   --swoopsy("test.txt", "asdf")
+:   --local f = open("commandments.txt", "w")
+:   --if(file.write(true, "commandments.txt", "test")) then
+:   --    say("true")
+:   --else
+:   --    say("false")
+:   --end
+:   --file.write("test.txt", "test.txt")
+:   say("got em")
+:	if(c_monsters(8) > 0) then
+:		if(c_monsters(8) > max_enemies) then
+:			max_enemies = c_monsters(8)
+:			original_diff = get_group_difficulty()
+:		end
+:		table.insert(possible_actions, "attack")
+:	end
+:
+:	if(last_hp < last_mhp) and (c_monsters(8)  == 0) then
+:		table.insert(possible_actions, "rest")
+:	end
+:
+:	if(you.hunger() == "hungry" or you.hunger() == "very hungry" or you.hunger() == "near starving" or you.hunger() == "starving") then
+:		table.insert(possible_actions, "eat")
+:	end
+:
+:	if have_ranged() or have_throwable() then
+:		table.insert(possible_actions, "fire")
+:	end
+:
+:	if have_junk() and not you.berserk() then
+:		table.insert(possible_actions, "drop")
+:	end
+:
+:	if(c_monsters(8) == 0) then
+:		table.insert(possible_actions, "autotravel")
+:	end
+:
+:	if have_amulet() and not you.berserk() then
+:		table.insert(possible_actions, "wear amulet")
+:	end
+:
+:	if have_ring() and not you.berserk() then
+:		table.insert(possible_actions, "wear ring")
+:	end
+:
+:	if last_hp*4 < last_mhp then
+:		table.insert(possible_actions, "flee")
+:	end
+:
+:	for i = 1, table.getn(Bommandments) do
+:		for j = 1, table.getn(possible_actions) do
+:			if(Bommandments[i][2] == possible_actions[j]) then
+:				table.insert(possible_commandments, Bommandments[i])
+:			end
+:		end
+:	end
+:	for i = 1, table.getn(possible_commandments) do
+:		if(possible_commandments[i][1] > 0) then
+:			table.insert(dos, possible_commandments[i])
+:		else
+:			table.insert(donts, possible_commandments[i])
+:		end
+:	end
+:
+:	--say("dos:")
+:	for i = 1, table.getn(dos) do
+:		--say_table(dos[i])
+:	end
+:	--say("donts")
+:	for i = 1, table.getn(donts) do
+:		--say_table(donts[i])
+:	end
+:
+:
+:
+:	for i = 1, table.getn(possible_actions) do
+:		table.remove(possible_actions, 1)
+:	end
+:
+:	for i = 1, table.getn(possible_commandments) do
+:		table.remove(possible_commandments, 1)
+:	end
+:
+:	for i = 1, table.getn(dos) do
+:		table.remove(dos, 1)
+:	end
+:
+:	for i = 1, table.getn(donts) do
+:		table.remove(donts, 1)
+:	end
+:
+:	say("made it so")
+:end
+
+--:local verbs = {"zap", "read scroll", "try scroll", "try potion", "drink potion",
+-- "wait","step towards Lair"}
+
+
+:function learn()
+:	local possible_verbs = {}
+:	if(current_actions[1] == true) then
+:		table.insert(possible_verbs, "flee")
+:	end
+:	if(current_actions[2] == true) then
+:		table.insert(possible_verbs, "attack")
+:	end
+:	if(current_actions[3] == true) then
+:		table.insert(possible_verbs, "rest")
+:	end
+:
+:	for i = 1, table.getn(possible_verbs) do
+:		if(possible_verbs[i] == "flee") then
+:			write_flee()
+:		elseif (possible_verbs[i] == "rest") and (you.poisoned() == true) and (you.hp() < last_hp) then
+:			--write_potion()
+:		elseif (you.hunger() == "starving") then
+:			write_hunger()
+:		elseif(possible_verbs[i] == "attack") and c_monsters(8) == 0 then
+:			write_victory()
+:			original_diff = 0
+:			max_enemies = 0
+:		end
+:	end
+:
+:end
+
+:function write_hunger()
+:	write_commandments({0, "eat", "permafood", "if", "hungry"})
+:	write_commandments({1, "eat", "corpse", "if", "hungry"})
+:end
+
+:function write_victory()
+:	write_commandments({0, "attack", original_diff, "if", "g", "lvl", you.xl()})
+:end
+
+
+
+###################################
+###################################
+###################################
+
+# ---- Known Problems ----
+# Attacking with cursed launcher forces prompt
+# Shopping list forces prompt
+# Enemy behind statue leads to firing at self and prompt
+
+# ---- Improvements to make ----
+# Proper detection and handling of stat choice on level up.
+# Use spells.
+# Use abilities
+# God worship
+# Define more use cases for specific scrolls and potions
+# Handle shopping
+# Stop fleeing and attack if unable to escape
+# Use stairs to aid fleeing
+# Use found weapons and armor
+# Handle invisible enemies (no idea how)
+# Actively search for corpses when hungry
+# Switch back to launcher in battle when at range if prefer_ranged
+# Ensure launchers have relevant ammo
+# some kind of issue with ranged targeting the player when an enemy is perhaps untargetable even though they're in range and visible
